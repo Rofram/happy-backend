@@ -26,8 +26,7 @@ export default {
           longitude: orphanage.longitude,
           about: orphanage.about,
           instructions: orphanage.instructions,
-          whatsapp: orphanage.whatsapp,
-          opening_hours: orphanage.open_hours,
+          opening_hours: orphanage.opening_hours,
           open_on_weekends: orphanage.open_on_weekends,
           images: orphanage.Images.map(image => ({
             id: image.id,
@@ -71,8 +70,7 @@ export default {
         longitude: orphanage.longitude,
         about: orphanage.about,
         instructions: orphanage.instructions,
-        whatsapp: orphanage.whatsapp,
-        opening_hours: orphanage.open_hours,
+        opening_hours: orphanage.opening_hours,
         open_on_weekends: orphanage.open_on_weekends,
         images: orphanage.Images.map(image => ({
           id: image.id,
@@ -98,8 +96,7 @@ export default {
       longitude,
       about,
       instructions,
-      whatsapp,
-      open_hours,
+      opening_hours,
       open_on_weekends
     } = req.body
 
@@ -109,8 +106,7 @@ export default {
       longitude: Number(longitude),
       about,
       instructions,
-      whatsapp,
-      open_hours,
+      opening_hours,
       open_on_weekends: open_on_weekends === 'true',
     }
 

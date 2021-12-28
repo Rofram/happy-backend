@@ -17,8 +17,7 @@ model Orphanages {
   longitude        Float
   about            String
   instructions     String
-  whatsapp         String?
-  open_hours       String
+  opening_hours    String
   open_on_weekends Boolean  @default(false)
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
