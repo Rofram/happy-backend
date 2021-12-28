@@ -26,9 +26,10 @@ export default {
           longitude: orphanage.longitude,
           about: orphanage.about,
           instructions: orphanage.instructions,
+          whatsapp: orphanage.whatsapp,
           opening_hours: orphanage.open_hours,
           open_on_weekends: orphanage.open_on_weekends,
-          image: orphanage.Images.map(image => ({
+          images: orphanage.Images.map(image => ({
             id: image.id,
             url: `${process.env.UPLOADS_URL}${image.url}`
           }))
@@ -70,9 +71,10 @@ export default {
         longitude: orphanage.longitude,
         about: orphanage.about,
         instructions: orphanage.instructions,
+        whatsapp: orphanage.whatsapp,
         opening_hours: orphanage.open_hours,
         open_on_weekends: orphanage.open_on_weekends,
-        image: orphanage.Images.map(image => ({
+        images: orphanage.Images.map(image => ({
           id: image.id,
           url: `${process.env.UPLOADS_URL}${image.url}`
         }))
@@ -96,6 +98,7 @@ export default {
       longitude,
       about,
       instructions,
+      whatsapp,
       open_hours,
       open_on_weekends
     } = req.body
@@ -106,6 +109,7 @@ export default {
       longitude: Number(longitude),
       about,
       instructions,
+      whatsapp,
       open_hours,
       open_on_weekends: open_on_weekends === 'true',
     }
@@ -116,6 +120,7 @@ export default {
       longitude: yup.number().required(),
       about: yup.string().required().max(300),
       instructions: yup.string().required(),
+      whatsapp: yup.string().matches(/^\([0-9]{2}\) [0-9]{5}-[0-9]{4}$/),
       open_hours: yup.string().required(),
       open_on_weekends: yup.boolean().required()
     })
